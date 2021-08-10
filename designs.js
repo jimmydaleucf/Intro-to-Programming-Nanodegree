@@ -29,7 +29,8 @@ function makeGrid() {
 
   //this code removes the existing grid (if it's already been drawn) before starting the process of drawing the grid again. 
   pixelCanvas.querySelectorAll("tr").forEach((el) => el.remove());
-  
+
+  //This loop draws a row, then creates as many cells across as the inputWidth variable calls for, then loops back and draws the next row, etc.
   for (var i = 0; i < gridHeight.value; i++) {
     const row = pixelCanvas.insertRow(i);
     for (var j = 0; j < gridWidth.value; j++) {
