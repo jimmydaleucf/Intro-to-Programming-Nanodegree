@@ -3,14 +3,11 @@
 
 // When size is submitted by the user, call makeGrid()
 
-
 const sizePicker = document.getElementById("sizePicker");
 const pixelCanvas = document.getElementById("pixelCanvas");
 const chosenColor = document.getElementById("colorPicker");
 const gridHeight = document.getElementById("inputHeight");
 const gridWidth = document.getElementById("inputWidth");
-
-
 
 //The sizePicker event listener is triggered once the user clicks the 'submit' button. It then executes the makeGrid function to draw the table.
 sizePicker.addEventListener("submit", function (event) {
@@ -18,7 +15,7 @@ sizePicker.addEventListener("submit", function (event) {
   event.preventDefault();
 });
 
-//i created thus function to paint a cell.  By pullling it out of the loop, it makes the code simpler. It can be called from within the loop with just the function call. 
+//i created thus function to paint a cell.  By pullling it out of the loop, it makes the code simpler. It can be called from within the loop with just the function call.
 function paintCell(event) {
   event.target.style.backgroundColor = chosenColor.value;
 }
@@ -27,7 +24,7 @@ function paintCell(event) {
 function makeGrid() {
   var n = 1;
 
-  //this code removes the existing grid (if it's already been drawn) before starting the process of drawing the grid again. 
+  //this code removes the existing grid (if it's already been drawn) before starting the process of drawing the grid again.
   pixelCanvas.querySelectorAll("tr").forEach((el) => el.remove());
 
   //This loop draws a row, then creates as many cells across as the inputWidth variable calls for, then loops back and draws the next row, etc.
