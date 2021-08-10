@@ -26,7 +26,10 @@ function paintCell(event) {
 //makeGrid() function is draws the grid per specified dimensions. i added the variable 'n' so that each cell would have a unique identifier in it to distinguish which cell was clicked on
 function makeGrid() {
   var n = 1;
+
+  //this code removes the existing grid (if it's already been drawn) before starting the process of drawing the grid again. 
   pixelCanvas.querySelectorAll("tr").forEach((el) => el.remove());
+  
   for (var i = 0; i < gridHeight.value; i++) {
     const row = pixelCanvas.insertRow(i);
     for (var j = 0; j < gridWidth.value; j++) {
